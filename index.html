@@ -16,7 +16,7 @@
         <a href="#say">say</a>
         <a href="#gif">gif</a>
     </div>
-    <center style="display: none" id="home" class="content">
+    <center id="home" class="content">
         <h3 id="factEl">Interesting fact:</h3>
         <button onclick="fact();">Reload fact</button>
         <br>
@@ -79,7 +79,7 @@
 
             // Get the hash from the URL
             const hash = window.location.hash.substring(1); // Remove the '#' character
-
+            document.getElementById("home").style.display = 'block';
             // If there is a hash, show the corresponding element
             if (hash) {
                 const element = document.getElementById(hash);
