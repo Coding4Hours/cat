@@ -61,6 +61,9 @@
         <img id="says" src="https://cataas.com/cat/says/hello" height="50%" width="50%">
     </center>
     <script>
+        if(location.href == location.origin) {
+            location.href += "#home";
+        }
         setInterval(fact, 10000);
         function catsay() {
             document.getElementById("says").src = "https://cataas.com/cat/says/" + prompt("Cat say") + "?fontSize=50";
