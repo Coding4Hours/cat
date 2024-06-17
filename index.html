@@ -56,7 +56,7 @@
     </center>
     <script>
         if(location.href == location.origin) {
-            location.href += "#home";
+            document.getElementById("home").style.display = 'block';
         }
         setInterval(fact, 6000);
         function catsay() {
