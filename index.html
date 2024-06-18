@@ -16,10 +16,10 @@
     </div>
     <div class="content" id="home">
         <h3 id="factEl">Interesting fact:</h3>
-        <button onclick="fact();">Reload fact</button>
+        <button onclick="fetch('https://meowfacts.herokuapp.com/').then(response=>response.json()).then(data=>document.getElementById('factEl').textContent='Interesting fact: '+data.data[0]).catch(console.error);">Reload fact</button>
         <br><br>
         <button onclick="reloadImage();">Reload image</button>
-        <button onclick="addFilter();">Add filter</button>
+        <button onclick="document.getElementById('img').src = 'https://cataas.com/cat?filter=' + prompt('Choose a filter. e.g. mono, negate, custom. See cataas.com/');">Add filter</button>
         <br><br>
         <img id="img" alt="Cat not found" width="25%" height="25%" src="https://cataas.com/cat"></img>
         <br><br>
@@ -38,7 +38,7 @@
         <img id="gifImg" src="https://cataas.com/cat/gif" height="25%" width="25%">
     </div>
     <div class="content" id="say" style="display: none;">
-        <button onclick="catsay();">Change the saying</button>
+        <button onclick="document.getElementById('says').src='https://cataas.com/cat/says/'+prompt('Cat say:')+'?fontSize=50';">Change the saying</button>
         <br><br>
         <img id="says" src="https://cataas.com/cat/says/hello" height="50%" width="50%">
     </div>
