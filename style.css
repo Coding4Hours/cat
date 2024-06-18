@@ -227,25 +227,41 @@ body {
 }
 
 
-/* More Multiselect styling */
+/* Multiselect styling */
 .multiselect {
+    position: relative; /* Ensure relative positioning for absolute children */
     width: 170px;
     font-size: 15px;
-    padding-bottom: 4px;
     border-radius: 3px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     transition: border-color 0.2s;
     outline: none;
-    position: relative; /* Added position relative */
+}
+
+.multiselect .title {
+    cursor: pointer;
+    height: 16px;
+    padding: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.multiselect .title .text {
+    max-width: 130px;
+    max-height: 25px;
+    overflow: hidden;
+    line-height: 1.3em;
 }
 
 .multiselect .container {
     max-height: 200px;
     overflow: auto;
-    margin-top: 4px;
     width: 170px;
     transition: 0.2s;
     position: absolute;
+    top: 100%; /* Position dropdown below the title */
+    left: 0;
     z-index: 99;
     background: #fff;
     border: 1px solid transparent;
@@ -268,11 +284,4 @@ body {
 .multiselect .container option.selected {
     background: rgb(122, 175, 233);
     border-top: 1px solid rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    color: #fff;
-}
-
-.multiselect .container option:hover {
-    background: rgba(0, 0, 0, 0.1);
-    color: #000;
-}
+    border-bottom: 1px soli
