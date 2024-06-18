@@ -7,34 +7,10 @@ function reloadImage() {
     document.getElementById('img').src = 'https://cataas.com/cat?a=' + Math.random();
 }
 
-// Function to add filter to cat image
-function addFilter() {
-    var filter = prompt('Choose a filter. e.g. mono, negate, custom. See cataas.com/');
-    if (filter) {
-        document.getElementById('img').src = 'https://cataas.com/cat?filter=' + filter;
-    }
-}
-
 // Function to reload the cat gif
 function reloadGif() {
     handleWaitCheck();
     document.getElementById('gifImg').src = 'https://cataas.com/cat/gif?a=' + Math.random();
-}
-
-// Function to change the saying of the cat
-function catsay() {
-    var saying = prompt('Cat say:');
-    if (saying) {
-        document.getElementById('says').src = 'https://cataas.com/cat/says/' + saying + '?fontSize=50';
-    }
-}
-
-// Function to fetch and display a random fact
-function fact() {
-    fetch('https://meowfacts.herokuapp.com/')
-        .then(response => response.json())
-        .then(data => document.getElementById('factEl').textContent = 'Interesting fact: ' + data.data[0])
-        .catch(console.error);
 }
 
 // Function to handle waiting period
@@ -59,9 +35,6 @@ function showContentFromHash() {
     });
 }
 
-// Interval to reload fact every 6 seconds
-setInterval(fact, 6000);
-
 // Fetch tags and populate options
 document.addEventListener('DOMContentLoaded', function () {
     const selectElement = document.getElementById('options1');
@@ -76,9 +49,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
             selectElement.innerHTML = options;
         })
-        .catch(error => {
-            console.error('Error fetching tags:', error);
-        });
 });
 
 // Event listener for hash change
