@@ -53,9 +53,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Toggle active class for multiselect on title click
 document.querySelectorAll('.multiselect .title').forEach(function(title) {
-    title.addEventListener('click', function() {
+    title.addEventListener('click', function(event) {
         var multiselect = this.closest('.multiselect');
         multiselect.classList.toggle('active');
+        
+        // Close other open multiselects
+        document.querySelectorAll('.multiselect').forEach(function(ms) {
+            if (ms !== multiselect) {
+                ms.classList.remove('active');
+            }
+        });
+        
+        event.stopPropagation(); // Prevent document click listener from immediately closing
     });
 });
 
@@ -70,11 +79,12 @@ document.addEventListener('click', function(event) {
 
 // Handle option selection within multiselect dropdown
 document.querySelectorAll('.multiselect .container option').forEach(function(option) {
-    option.addEventListener('click', function() {
+    option.addEventListener('click', function(event) {
         var multiselect = this.closest('.multiselect');
         var title = multiselect.querySelector('.title .text');
         title.textContent = this.textContent.trim();
         multiselect.classList.remove('active');
+        event.stopPropagation(); // Prevent immediate closure by document click listener
     });
 });
 
