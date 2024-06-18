@@ -51,15 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
 });
 
-document.addEventListener('click', function(event) {
-    // Close multiselect dropdown when clicking outside
-    if (!event.target.closest('.multiselect')) {
-        document.querySelectorAll('.multiselect.active').forEach(function(multi) {
-            multi.classList.remove('active');
-        });
-    }
-});
-
+// Toggle active class for multiselect on title click
 document.querySelectorAll('.multiselect .title').forEach(function(title) {
     title.addEventListener('click', function() {
         var multiselect = this.closest('.multiselect');
@@ -67,11 +59,21 @@ document.querySelectorAll('.multiselect .title').forEach(function(title) {
     });
 });
 
+// Close multiselect dropdown when clicking outside
+document.addEventListener('click', function(event) {
+    if (!event.target.closest('.multiselect')) {
+        document.querySelectorAll('.multiselect.active').forEach(function(multi) {
+            multi.classList.remove('active');
+        });
+    }
+});
+
+// Handle option selection within multiselect dropdown
 document.querySelectorAll('.multiselect .container option').forEach(function(option) {
     option.addEventListener('click', function() {
         var multiselect = this.closest('.multiselect');
         var title = multiselect.querySelector('.title .text');
-        title.textContent = this.textContent;
+        title.textContent = this.textContent.trim();
         multiselect.classList.remove('active');
     });
 });
