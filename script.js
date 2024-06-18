@@ -51,5 +51,31 @@ document.addEventListener('DOMContentLoaded', function () {
         })
 });
 
+document.addEventListener('click', function(event) {
+    // Close multiselect dropdown when clicking outside
+    if (!event.target.closest('.multiselect')) {
+        document.querySelectorAll('.multiselect.active').forEach(function(multi) {
+            multi.classList.remove('active');
+        });
+    }
+});
+
+document.querySelectorAll('.multiselect .title').forEach(function(title) {
+    title.addEventListener('click', function() {
+        var multiselect = this.closest('.multiselect');
+        multiselect.classList.toggle('active');
+    });
+});
+
+document.querySelectorAll('.multiselect .container option').forEach(function(option) {
+    option.addEventListener('click', function() {
+        var multiselect = this.closest('.multiselect');
+        var title = multiselect.querySelector('.title .text');
+        title.textContent = this.textContent;
+        multiselect.classList.remove('active');
+    });
+});
+
+
 // Event listener for hash change
 window.addEventListener('hashchange', showContentFromHash);
