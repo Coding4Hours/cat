@@ -225,3 +225,54 @@ body {
 .pill-nav a:hover {
     background-color: #005f99;
 }
+
+
+/* More Multiselect styling */
+.multiselect {
+    width: 170px;
+    font-size: 15px;
+    padding-bottom: 4px;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: border-color 0.2s;
+    outline: none;
+    position: relative; /* Added position relative */
+}
+
+.multiselect .container {
+    max-height: 200px;
+    overflow: auto;
+    margin-top: 4px;
+    width: 170px;
+    transition: 0.2s;
+    position: absolute;
+    z-index: 99;
+    background: #fff;
+    border: 1px solid transparent;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    display: none; /* Initially hide container */
+}
+
+.multiselect.active .container {
+    display: block; /* Show container when active */
+}
+
+.multiselect .container option {
+    padding: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+}
+
+.multiselect .container option.selected {
+    background: rgb(122, 175, 233);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    color: #fff;
+}
+
+.multiselect .container option:hover {
+    background: rgba(0, 0, 0, 0.1);
+    color: #000;
+}
