@@ -285,3 +285,61 @@ body {
     background: rgb(122, 175, 233);
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px soli
+}
+
+/* Multiselect styling */
+.multiselect {
+    position: relative;
+    width: 170px;
+    font-size: 15px;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: border-color 0.2s;
+    outline: none;
+}
+
+.multiselect .title {
+    cursor: pointer;
+    height: 30px;
+    padding: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f0f0;
+    border-radius: 3px;
+}
+
+.multiselect .title .text {
+    max-width: 130px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.multiselect .container {
+    max-height: 200px;
+    overflow-y: auto;
+    width: 100%;
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    z-index: 99;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: none;
+    display: none;
+}
+
+.multiselect.active .container {
+    display: block;
+}
+
+.multiselect .container option {
+    padding: 8px 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.multiselect .container option:hover {
+    background-color: #f0f0f0;
+}
