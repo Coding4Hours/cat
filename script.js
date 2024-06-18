@@ -51,43 +51,59 @@ document.addEventListener('DOMContentLoaded', function () {
         })
 });
 
-// Toggle active class for multiselect on title click
-document.querySelectorAll('.multiselect .title').forEach(function(title) {
-    title.addEventListener('click', function(event) {
-        var multiselect = this.closest('.multiselect');
-        multiselect.classList.toggle('active');
-        
-        // Close other open multiselects
-        document.querySelectorAll('.multiselect').forEach(function(ms) {
-            if (ms !== multiselect) {
-                ms.classList.remove('active');
-            }
-        });
-        
-        event.stopPropagation(); // Prevent document click listener from immediately closing
-    });
-});
-
-// Close multiselect dropdown when clicking outside
-document.addEventListener('click', function(event) {
-    if (!event.target.closest('.multiselect')) {
-        document.querySelectorAll('.multiselect.active').forEach(function(multi) {
-            multi.classList.remove('active');
-        });
-    }
-});
-
-// Handle option selection within multiselect dropdown
-document.querySelectorAll('.multiselect .container option').forEach(function(option) {
-    option.addEventListener('click', function(event) {
-        var multiselect = this.closest('.multiselect');
-        var title = multiselect.querySelector('.title .text');
-        title.textContent = this.textContent.trim();
-        multiselect.classList.remove('active');
-        event.stopPropagation(); // Prevent immediate closure by document click listener
-    });
-});
 
 
 // Event listener for hash change
 window.addEventListener('hashchange', showContentFromHash);
+
+
+
+
+
+
+
+
+
+
+
+
+// Function to toggle active class for multiselect on title click
+function toggleMultiselect(multiselect) {
+    multiselect.classList.toggle('active');
+    
+    // Close other open multiselects
+    document.querySelectorAll('.multiselect').forEach(function(ms) {
+        if (ms !== multiselect) {
+            ms.classList.remove('active');
+        }
+    });
+}
+
+// Initialize multiselects
+document.querySelectorAll('.multiselect').forEach(function(multiselect) {
+    const title = multiselect.querySelector('.title');
+    const container = multiselect.querySelector('.container');
+
+    // Toggle active class on title click
+    title.addEventListener('click', function(event) {
+        toggleMultiselect(multiselect);
+        event.stopPropagation(); // Prevent document click listener from immediately closing
+    });
+
+    // Close multiselect dropdown when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!multiselect.contains(event.target)) {
+            multiselect.classList.remove('active');
+        }
+    });
+
+    // Handle option selection within multiselect dropdown
+    container.addEventListener('click', function(event) {
+        if (event.target.tagName === 'OPTION') {
+            var titleText = multiselect.querySelector('.title .text');
+            titleText.textContent = event.target.textContent.trim();
+            multiselect.classList.remove('active');
+            event.stopPropagation(); // Prevent immediate closure by document click listener
+        }
+    });
+});
