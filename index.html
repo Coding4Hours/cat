@@ -10,11 +10,11 @@
 
 <body>
     <div class="pill-nav">
-        <a href="#home">Home</a>
+        <a href="/cat/">Home</a>
         <a href="#say">say</a>
         <a href="#gif">gif</a>
     </div>
-    <div class="content" id="home">
+    <div class="content">
         <h3 id="factEl">Interesting fact:</h3>
         <button onclick="fetch('https://meowfacts.herokuapp.com/').then(response=>response.json()).then(data=>document.getElementById('factEl').textContent='Interesting fact: '+data.data[0]).catch(console.error);">Reload fact</button>
         <br><br>
