@@ -1,4 +1,3 @@
-/* Reset and basic styling */
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
@@ -6,7 +5,6 @@ body {
     padding: 0;
 }
 
-/* Navigation bar */
 .navbar {
     background-color: #00bfff;
     overflow: hidden;
@@ -14,10 +12,14 @@ body {
 }
 
 .navbar button {
+    appearance: none;
     background-color: #007acc;
     border: none;
     color: white;
     padding: 14px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
@@ -28,10 +30,9 @@ body {
     background-color: #005f99;
 }
 
-/* Content styling */
 .content {
     text-align: center;
-    padding: 20px;
+    padding: 50px;
     background-color: #ffffff;
     margin: 20px auto;
     border-radius: 8px;
@@ -47,10 +48,14 @@ body {
 }
 
 .content button {
+    appearance: none;
     background-color: #4CAF50;
     border: none;
     color: white;
     padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
     font-size: 16px;
     margin: 10px 5px;
     cursor: pointer;
@@ -78,7 +83,6 @@ body {
     box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
 }
 
-/* Dropdown styling */
 .dropdown {
     margin-top: 20px;
 }
@@ -90,7 +94,6 @@ body {
     border: 1px solid #ccc;
 }
 
-/* Multiselect styling */
 .multiselect {
     width: 170px;
     font-size: 15px;
@@ -206,80 +209,26 @@ body {
     display: block;
 }
 
-/* Pill navigation */
-.pill-nav {
-    margin-top: 20px;
-}
-
 .pill-nav a {
     display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
+    color: black;
+    text-align: center;
+    padding: 14px;
     text-decoration: none;
-    color: white;
-    background-color: dodgerblue;
+    font-size: 17px;
     border-radius: 5px;
-    margin-right: 10px;
 }
 
 .pill-nav a:hover {
-    background-color: #005f99;
+    background-color: #ddd;
+    color: black;
 }
 
-
-/* Multiselect styling */
-.multiselect {
-    position: relative;
-    width: 170px;
-    font-size: 15px;
-    border-radius: 3px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    transition: border-color 0.2s;
-    outline: none;
+.pill-nav a {
+    background-color: dodgerblue;
+    color: white;
 }
 
-.multiselect .title {
-    cursor: pointer;
-    height: 30px;
-    padding: 6px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f0f0f0;
-    border-radius: 3px;
-}
-
-.multiselect .title .text {
-    max-width: 130px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-
-.multiselect .container {
-    max-height: 200px;
-    overflow-y: auto;
-    width: calc(100% - 2px); /* Adjust width to fit within the borders */
-    position: absolute;
-    top: calc(100% + 1px); /* Position dropdown below the title */
-    left: 0;
-    z-index: 99;
-    background: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-top: none;
-    display: none;
-}
-
-.multiselect.active .container {
-    display: block;
-}
-
-.multiselect .container option {
-    padding: 8px 10px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.multiselect .container option:hover {
-    background-color: #f0f0f0;
+.pill-nav {
+    background-color: aqua;
 }
