@@ -152,4 +152,3 @@ $(document).ready(function() {
     var multi = new Multiselect("#countries");
 });
 
-
