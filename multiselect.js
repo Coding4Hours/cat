@@ -129,26 +129,8 @@ Multiselect.prototype = {
             }
         }
     },
-
-    getSelectionsString: function() {
-        if(this.selections.length > 0)
-            return this.selections.join(", ");
-        else return "Select";
-    },
-
-    setSelections: function(arr) {
-        if(!arr[0]) {
-            error("ERROR: This does not look like an array.");
-            return;
-        }
-
-        this.selections = arr;
-        this.selectionStatus();
-        this.setSelectionsString();
-    },
 };
 
 $(document).ready(function() {
     var multi = new Multiselect("#countries");
 });
-
