@@ -229,66 +229,6 @@ body {
 
 /* Multiselect styling */
 .multiselect {
-    position: relative; /* Ensure relative positioning for absolute children */
-    width: 170px;
-    font-size: 15px;
-    border-radius: 3px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    transition: border-color 0.2s;
-    outline: none;
-}
-
-.multiselect .title {
-    cursor: pointer;
-    height: 16px;
-    padding: 6px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.multiselect .title .text {
-    max-width: 130px;
-    max-height: 25px;
-    overflow: hidden;
-    line-height: 1.3em;
-}
-
-.multiselect .container {
-    max-height: 200px;
-    overflow: auto;
-    width: 170px;
-    transition: 0.2s;
-    position: absolute;
-    top: 100%; /* Position dropdown below the title */
-    left: 0;
-    z-index: 99;
-    background: #fff;
-    border: 1px solid transparent;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    display: none; /* Initially hide container */
-}
-
-.multiselect.active .container {
-    display: block; /* Show container when active */
-}
-
-.multiselect .container option {
-    padding: 5px;
-    cursor: pointer;
-    transition: 0.2s;
-    border-top: 1px solid transparent;
-    border-bottom: 1px solid transparent;
-}
-
-.multiselect .container option.selected {
-    background: rgb(122, 175, 233);
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    border-bottom: 1px soli
-}
-
-/* Multiselect styling */
-.multiselect {
     position: relative;
     width: 170px;
     font-size: 15px;
@@ -319,9 +259,9 @@ body {
 .multiselect .container {
     max-height: 200px;
     overflow-y: auto;
-    width: 100%;
+    width: calc(100% - 2px); /* Adjust width to fit within the borders */
     position: absolute;
-    top: calc(100% + 5px);
+    top: calc(100% + 1px); /* Position dropdown below the title */
     left: 0;
     z-index: 99;
     background: #fff;
