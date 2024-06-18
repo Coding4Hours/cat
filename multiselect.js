@@ -153,22 +153,3 @@ $(document).ready(function() {
 });
 
 
-document.addEventListener('DOMContentLoaded', function () {
-    const selectElement = document.getElementById('options1');
-
-    // Fetch the tags from the API
-    fetch('https://cataas.com/api/tags')
-        .then(response => response.json())
-        .then(tags => {
-            // Remove empty tags and create <option> elements
-            const options = tags.filter(tag => tag.trim() !== '')
-                                .map(tag => `<option value="${tag.replace("#", "")}">${tag.replace("#", "")}</option>`)
-                                .join('');
-
-            // Insert the options into the select element
-            selectElement.innerHTML = options;
-        })
-        .catch(error => {
-            console.error('Error fetching tags:', error);
-        });
-});
