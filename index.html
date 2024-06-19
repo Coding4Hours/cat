@@ -14,8 +14,8 @@
 <body>
     <div class="pill-nav">
         <a href="/cat/">Home</a>
-        <a href="#say">say</a>
-        <a href="#gif">gif</a>
+        <a href="#say">What does the cat say</a>
+        <a href="#gif">GIF</a>
     </div>
     <center class="content">
         <h3 onload="fetch('https://meowfacts.herokuapp.com/') .then(response => response.json()) .then(data => document.getElementById('factEl').textContent = 'Interesting fact: ' + data.data[0]) .catch(console.error);" id="factEl">Interesting fact:</h3>
@@ -23,8 +23,7 @@
         <br>
         <br>
         <button
-            onclick="if(localStorage.getItem('wait') == 'true' || !localStorage.getItem('wait')) { alert('Wait one second...'); localStorage.setItem('wait', 'asdf')} document.getElementById('img').src = 'https://cataas.com/cat?a=' + Math.random()">Reload
-            image</button>
+            onclick="reloadImage();">Reload image</button>
         <button
             onclick="var a =prompt('choose a filter. eg. mono, negate, custom. see. cataas.com/'); document .getElementById('img').src='https://cataas.com/cat?filter=' + a;">Add
             filter</button>
@@ -49,8 +48,7 @@
     </center>
     <center style="display: none" id="gif" class="content">
         <button
-        onclick="if(localStorage.getItem('wait') == 'true' || !localStorage.getItem('wait')) { alert('Wait one second...'); localStorage.setItem('wait', 'asdf')} document.getElementById('gif').src = 'https://cataas.com/cat?a=' + Math.random()">Reload
-        image</button>
+        onclick="reloadGif();">Reload GIF</button>
         <br>
         <br>
         <img id="gif" src="https://cataas.com/cat/gif" height="25%" width="25%">
