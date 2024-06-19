@@ -1,3 +1,4 @@
+
 // Created by @conmarap.
 
 Array.prototype.search = function(elem) {
@@ -99,10 +100,12 @@ Multiselect.prototype = {
     setSelectionsString: function() {
         var selects = this.getSelectionsString().split(", ");
         $(this.selector + ".multiselect > .title").attr("title", selects);
-        var opts = $(this.selector + ".multiselect option");
 
+        var opts = $(this.selector + ".multiselect option");
+        
         if(selects[0] != "Select") document.getElementById("img").src = "https://cataas.com/cat/" + selects.join(",");
         if(selects[0] == "Select") document.getElementById("img").src = "https://cataas.com/cat";
+        
         if(selects.length > 6) {
             var _selects = this.getSelectionsString().split(", ");
             _selects = _selects.splice(0, 6);
@@ -128,15 +131,15 @@ Multiselect.prototype = {
                 }
             }
         }
-    }
+    },
 
-    function getSelectionsString() {
+    getSelectionsString: function() {
         if(this.selections.length > 0)
             return this.selections.join(", ");
         else return "Select";
-    }
+    },
 
-    function setSelections(arr) {
+    setSelections: function(arr) {
         if(!arr[0]) {
             error("ERROR: This does not look like an array.");
             return;
@@ -145,7 +148,7 @@ Multiselect.prototype = {
         this.selections = arr;
         this.selectionStatus();
         this.setSelectionsString();
-    }
+    },
 };
 
 $(document).ready(function() {
