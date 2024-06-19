@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(tags => {
             const options = tags
                 .filter(tag => tag.trim() !== '')
-                .map(tag => `<option value="${tag.replace("#", "")}">${tag.replace("#", "")}</option>`)
+                .map(tag => `<option value="${tag.replace("#", "").toLowerCase()}">${tag.replace("#", "")}</option>`)
                 .join('');
 
             selectElement.innerHTML = options;
