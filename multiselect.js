@@ -128,15 +128,15 @@ Multiselect.prototype = {
                 }
             }
         }
-    },
+    }
 
-    getSelectionsString: function() {
+    function getSelectionsString() {
         if(this.selections.length > 0)
             return this.selections.join(", ");
         else return "Select";
-    },
+    }
 
-    setSelections: function(arr) {
+    function setSelections(arr) {
         if(!arr[0]) {
             error("ERROR: This does not look like an array.");
             return;
@@ -145,7 +145,7 @@ Multiselect.prototype = {
         this.selections = arr;
         this.selectionStatus();
         this.setSelectionsString();
-    },
+    }
 };
 
 $(document).ready(function() {
