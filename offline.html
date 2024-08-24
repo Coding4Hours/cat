@@ -30,13 +30,60 @@
     <link rel="stylesheet" href="style.css">
     <script src="register-sw.js" defer></script>
     <link rel="manifest" href="manifest.json"/>  
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://www.catsworshipinghall.com/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "About",
+                  "item": "https://www.catsworshipinghall.com/about.html"
+                }
+              ]
+            },
+            {
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "What is the Cats WorshiPping Hall?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The Cats Worshipping Hall is a website completly dedicated to cats."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How does the Cats Worshipping Hall earn money?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The Cats Worshipping Hall doesn't earn any money."
+                  }
+                }
+              ]
+            }
+          ]
+        }
+    </script>
+    
 </head>
 
 <body>
     <div class="pill-nav navbar">
-        <a href="/#">Home</a>
+        <a href="/index.html">Home</a>
         <a href="/#say">Cat Says</a>
         <a href="/#gif">Cat GIF</a>
+        <a href="/about.html">About</a>
     </div>
     <center>
         <h1>Your offline</h1>
