@@ -22,7 +22,6 @@ function handleWaitCheck() {
 }
 
 function changeSaying() {
-    document.getElementById("says").src = "https://cataas.com/cat/says/" + prompt("Cat say") + "?fontSize=50";
     Swal.fire({
         title: "What do you want it so say?",
         input: "text",
