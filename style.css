@@ -48,35 +48,15 @@ body {
 }
 
 .content button {
-    background-color: #5860D5;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    font-size: 16px;
-    margin: 10px 5px;
-    cursor: pointer;
-    border-radius: 4px;
+    color: #333;           /* Set link color */
+    padding: 10px 20px;   /* Add padding inside each link */
+    border-radius: 20px;  /* Optional rounded corners */
+    background-color: #fff; /* Optional background color for links */
+    transition: background-color 0.3s; /* Smooth background color transition */
 }
 
 .content button:hover {
-    background-color: #45a049;
-}
-
-.content button:focus {
-    box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
-    outline: none;
-}
-
-.content button:disabled {
-    background-color: #94d3a2;
-    border-color: rgba(27, 31, 35, .1);
-    color: rgba(255, 255, 255, .8);
-    cursor: default;
-}
-
-.content button:active {
-    background-color: #298e46;
-    box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+    background-color: #ddd; /* Change background color on hover */
 }
 
 /* Dropdown styling */
