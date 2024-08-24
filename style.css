@@ -1,36 +1,12 @@
 /* Reset and basic styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: alicblue;
     margin: 0;
     padding: 0;
 }
 
 /* Navigation bar */
-/*
-.navbar {
-    background-color: #00bfff;
-    overflow: hidden;
-    padding: 10px 0;
-    margin-top: 20px;
-}
-
-.pill-nav a {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    text-decoration: none;
-    color: white;
-    background-color: #5860D5;
-    border-radius: 5px;
-    margin-right: 10px;
-    margin: 0 auto
-}
-
-.pill-nav a:hover {
-    background-color: #005f99;
-}*/
-
 .pill-nav {
     display: flex;              /* Use Flexbox layout */
     justify-content: center;    /* Center items horizontally */
