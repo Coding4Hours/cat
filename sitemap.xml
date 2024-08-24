@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
+    <!-- Index Page -->
+    <url>
+        <loc>https://www.catsworshipinghall.com/index.html</loc>
+        <lastmod>2024-08-24</lastmod>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- Custom 404 Error Page -->
+    <url>
+        <loc>https://www.catsworshipinghall.com/404.html</loc>
+        <lastmod>2024-08-24</lastmod>
+        <priority>0.5</priority>
+    </url>
+    
+    <!-- Offline Page for No Internet Connection -->
+    <url>
+        <loc>https://www.catsworshipinghall.com/offline.html</loc>
+        <lastmod>2024-08-24</lastmod>
+        <priority>0.5</priority>
+    </url>
+
+</urlset>
