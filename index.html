@@ -17,9 +17,9 @@
 
 <body>
     <div class="pill-nav navbar">
-        <a href="#">Home</a>
-        <a href="#say">Cat says</a>
-        <a href="#gif">Cat GIF</a>
+        <a href="/#">Home</a>
+        <a href="/#say">Cat Says</a>
+        <a href="/#gif">Cat GIF</a>
     </div>
     <center class="content">
         <h3 onload="fetch('https://meowfacts.herokuapp.com/') .then(response => response.json()) .then(data => document.getElementById('factEl').textContent = 'Interesting fact: ' + data.data[0]) .catch(console.error);" id="factEl">Interesting fact:</h3>
