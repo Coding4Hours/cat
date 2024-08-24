@@ -101,6 +101,9 @@
         <button onclick="fetch('https://meowfacts.herokuapp.com/') .then(response => response.json()) .then(data => document.getElementById('factEl').textContent = 'Interesting fact: ' + data.data[0]) .catch(console.error);">Reload fact</button>
         <br>
         <br>
+        <h3 onload="dailyFact();" id="factEl">Daily cat fact:</h3>
+        <br/>
+        <br/>
         <button
             onclick="reloadImage();">Reload image</button>
         <button
