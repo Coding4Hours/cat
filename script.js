@@ -21,7 +21,7 @@ function handleWaitCheck() {
     }
 }
 
-function changeSaying() {
+function catSays() {
     Swal.fire({
         title: "What do you want it so say?",
         input: "text",
