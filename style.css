@@ -7,11 +7,12 @@ body {
 }
 
 /* Navigation bar */
+/*
 .navbar {
     background-color: #00bfff;
     overflow: hidden;
     padding: 10px 0;
-    /*margin-top: 20px;*/
+    margin-top: 20px;
 }
 
 .pill-nav a {
@@ -28,7 +29,29 @@ body {
 
 .pill-nav a:hover {
     background-color: #005f99;
+}*/
+
+.pill-nav {
+    display: flex;              /* Use Flexbox layout */
+    justify-content: center;    /* Center items horizontally */
+    gap: 10px;                  /* Add spacing between items (optional) */
+    padding: 10px;              /* Optional padding */
+    background-color: #f0f0f0;  /* Optional background color */
 }
+
+.pill-nav a {
+    text-decoration: none; /* Remove underline from links */
+    color: #333;           /* Set link color */
+    padding: 10px 20px;   /* Add padding inside each link */
+    border-radius: 20px;  /* Optional rounded corners */
+    background-color: #fff; /* Optional background color for links */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.pill-nav a:hover {
+    background-color: #ddd; /* Change background color on hover */
+}
+
 
 /* Content styling */
 .content {
