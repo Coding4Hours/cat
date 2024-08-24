@@ -21,6 +21,23 @@ function handleWaitCheck() {
     }
 }
 
+function changeSaying() {
+    document.getElementById("says").src = "https://cataas.com/cat/says/" + prompt("Cat say") + "?fontSize=50";
+    Swal.fire({
+        title: "What do you want it so say?",
+        input: "text",
+        inputAttributes: {
+            autocapitalize: "off"
+        },
+        showCancelButton: true,
+        confirmButtonText: "Say",
+        showLoaderOnConfirm: true,
+        preConfirm: async (catSaying) => {
+            document.getElementById("says").src = `https://cataas.com/cat/says/${catSaying}?fontSize=50`;
+        }
+    });
+}
+
 // Function to show content based on the URL hash
 function showContentFromHash() {
     const hash = window.location.hash.substring(1); // Remove the '#' character
@@ -36,7 +53,7 @@ function showContentFromHash() {
 }
 
 // Fetch tags and populate options
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     const selectElement = document.getElementById('options1');
 
     fetch('https://cataas.com/api/tags')
@@ -55,13 +72,3 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Event listener for hash change
 window.addEventListener('hashchange', showContentFromHash);
-
-
-
-
-
-
-
-
-
-
