@@ -73,7 +73,5 @@ document.addEventListener('DOMContentLoaded', function() {
 window.addEventListener('hashchange', showContentFromHash);
 
 if('serviceWorker' in navigator) {
-    window.addEventListener('load', () =>{
-        navigator.serviceWorker.register('/sw.js')
-    })
+    navigator.serviceWorker.register('/sw.js')
 }
