@@ -10,7 +10,8 @@ body {
 .navbar {
     background-color: #00bfff;
     overflow: hidden;
-    margin-top: 20px;
+    padding: 10px 0;
+    /*margin-top: 20px;*/
 }
 
 .pill-nav a {
