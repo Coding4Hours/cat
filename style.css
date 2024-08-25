@@ -49,8 +49,9 @@ body {
     margin-top: 20px;
     display: block;  /* Removes inline-block spacing issue */
     max-height: 300px; /* Define max height to maintain aspect ratio */
+    margin-left: auto;   /* Automatically calculates the left margin */
+    margin-right: auto;  /* Automatically calculates the right margin */
 }
-
 .content button {
     color: #333;        
     padding: 10px 20px; 
