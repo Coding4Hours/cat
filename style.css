@@ -4,30 +4,30 @@ body {
     background-color: aliceblue;
     margin: 0;
     padding: 0;
+    line-height: 1.6; /* Improves text readability */
 }
 
 /* Navigation bar */
 .pill-nav {
-    display: flex;              /* Use Flexbox layout */
-    justify-content: center;    /* Center items horizontally */
-    gap: 10px;                  /* Add spacing between items (optional) */
-    padding: 10px;              /* Optional padding */
-    background-color: #f0f0f0;  /* Optional background color */
+    display: flex;              
+    justify-content: center;    
+    gap: 10px;                  
+    padding: 10px;              
+    background-color: #f0f0f0;  
 }
 
 .pill-nav a {
-    text-decoration: none; /* Remove underline from links */
-    color: #333;           /* Set link color */
-    padding: 10px 20px;   /* Add padding inside each link */
-    border-radius: 20px;  /* Optional rounded corners */
-    background-color: #fff; /* Optional background color for links */
-    transition: background-color 0.3s; /* Smooth background color transition */
+    text-decoration: none;      
+    color: #333;               
+    padding: 10px 20px;         
+    border-radius: 20px;       
+    background-color: #fff;    
+    transition: background-color 0.3s; 
 }
 
 .pill-nav a:hover {
-    background-color: #ddd; /* Change background color on hover */
+    background-color: #ddd;     
 }
-
 
 /* Content styling */
 .content {
@@ -38,25 +38,29 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 600px;
+    width: 100%;  /* Ensures the content takes full width of the container */
+    min-height: 300px; /* Reserve space to prevent shifts when content loads */
 }
 
 .content img {
     max-width: 100%;
-    height: auto;
+    height: auto;  
     border-radius: 8px;
     margin-top: 20px;
+    display: block;  /* Removes inline-block spacing issue */
+    max-height: 300px; /* Define max height to maintain aspect ratio */
 }
 
 .content button {
-    color: #333;           /* Set link color */
-    padding: 10px 20px;   /* Add padding inside each link */
-    border-radius: 20px;  /* Optional rounded corners */
-    background-color: #fff; /* Optional background color for links */
-    transition: background-color 0.3s; /* Smooth background color transition */
+    color: #333;        
+    padding: 10px 20px; 
+    border-radius: 20px; 
+    background-color: #fff;
+    transition: background-color 0.3s; 
 }
 
 .content button:hover {
-    background-color: #ddd; /* Change background color on hover */
+    background-color: #ddd; 
 }
 
 /* Dropdown styling */
@@ -69,6 +73,7 @@ body {
     font-size: 16px;
     border-radius: 4px;
     border: 1px solid #ccc;
+    width: 100%;  /* Ensures full width in its container */
 }
 
 /* Multiselect styling */
@@ -87,8 +92,8 @@ body {
 }
 
 .multiselect.active {
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
     border-bottom: 1px solid transparent;
 }
 
