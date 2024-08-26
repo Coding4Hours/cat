@@ -13,6 +13,13 @@ function reloadGif() {
     document.getElementById('gifImg').src = 'https://cataas.com/cat/gif?a=' + Math.random();
 }
 
+function reloadFact() {
+    fetch('https://meowfacts.herokuapp.com/')
+        .then(response => response.json())
+        .then(data => document.getElementById('factEl').textContent = `Interesting fact: ${data.data[0]}`)
+        .catch(console.error);
+}
+
 // Function to handle waiting period
 function handleWaitCheck() {
     if (!localStorage.getItem('wait') || localStorage.getItem('wait') === 'true') {
