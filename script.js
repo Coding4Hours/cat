@@ -20,12 +20,30 @@ function reloadFact() {
         .catch(console.error);
 }
 
+function addFilter() {
+    Swal.fire({
+        title: "Choose a filter. eg. mono, negate.",
+        input: "text",
+        inputAttributes: {
+            autocapitalize: "off"
+        },
+        showCancelButton: true,
+        confirmButtonText: "Done!",
+        showLoaderOnConfirm: true,
+        preConfirm: async (filter) => {
+            document.getElementById('img').src = `https://cataas.com/cat?filter=${filter}`;
+        }
+    });
+}
+
 // Function to handle waiting period
 function handleWaitCheck() {
-    if (!localStorage.getItem('wait') || localStorage.getItem('wait') === 'true') {
-        alert('Wait one second...');
-        localStorage.setItem('wait', 'asdf');
-    }
+    Swal.fire({
+        title: "Please wait",
+        showCancelButton: true,
+        confirmButtonText: "Ok.",
+        showLoaderOnConfirm: true
+    });
 }
 
 function catSays() {
